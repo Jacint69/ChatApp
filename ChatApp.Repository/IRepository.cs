@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatApp.Repository
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         void Create(T item);
         T Read(int id);

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChatApp.Repository
 {
-    internal abstract class Repository<T> : IRepository<T> where T : class
+    public abstract class Repository<T> : IRepository<T> where T : class
     {
-        MessageDbContext db;
+        protected MessageDbContext db;
         public Repository(MessageDbContext db)
         {
 
@@ -27,7 +27,7 @@ namespace ChatApp.Repository
             db.SaveChanges();
         }
 
-        public abstract T Read(int id);
+        public abstract T? Read(int id);
 
         public IQueryable<T> ReadAll()
         {
